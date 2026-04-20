@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Current Affairs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ FIXED CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- MENU ICON -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <!-- SIDE MENU -->
+  <div class="side-menu" id="sideMenu">
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+    <!-- ✅ FIXED LINKS -->
+    <div onclick="go('/dashboard')">🏠 Dashboard</div>
+    <div onclick="go('/task')">📋 Task</div>
+    <div onclick="go('/timer')">⏱️ Timer</div>
+    <div onclick="go('/mentorship')">🎓 Mentorship</div>
+    <div onclick="go('/current')">📰 Current</div>
+    <div onclick="go('/ai')">🤖 AI</div>
+    <div onclick="go('/about')">ℹ️ About</div>
+
+  </div>
+
+  <div class="card">
+    <h2>Current Affairs</h2>
+
+    <!-- TOP TAB BUTTONS -->
+    <div class="tab-bar">
+
+      <div class="tab active" onclick="showSection('news', this)">
+        📰 CA
+      </div>
+
+      <div class="tab" onclick="showSection('quiz', this)">
+        ❓ Quiz
+      </div>
+
+      <div class="tab" onclick="showSection('reminder', this)">
+        🔔 Imp
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- CURRENT AFFAIRS -->
+      <div id="news" class="section">
+
+        <div class="current-list">
+
+          <div class="current-box" onclick="openLink('https://www.pib.gov.in')">
+            🧪 Science & Tech
+          </div>
+
+          <div class="current-box" onclick="openLink('https://www.rbi.org.in')">
+            💰 Economy
+          </div>
+
+          <div class="current-box" onclick="openLink('https://www.nationalgeographic.com')">
+            🌍 Geography
+          </div>
+
+          <div class="current-box" onclick="openLink('https://www.downtoearth.org.in')">
+            🌱 Environment
+          </div>
+
+          <div class="current-box" onclick="openLink('https://www.thehindu.com/news')">
+            🏛️ Polity
+          </div>
+
+          <div class="current-box" onclick="openLink('https://www.un.org')">
+            🌐 International Relations
+          </div>
+
+          <div class="current-box" onclick="openLink('https://www.isro.gov.in')">
+            🚀 Space & Defence
+          </div>
+
+          <div class="current-box" onclick="openLink('https://www.india.gov.in')">
+            📊 Government Schemes
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- QUIZ -->
+      <div id="quiz" class="section hidden">
+
+        <div class="current-list">
+
+          <div class="current-box" onclick="openLink('quiz1.pdf')">
+            📄 Quiz - 10 April
+          </div>
+
+          <div class="current-box" onclick="openLink('quiz2.pdf')">
+            📄 Quiz - 11 April
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- REMINDER -->
+      <div id="reminder" class="section hidden">
+
+        <div class="current-list">
+
+          <div class="current-box" onclick="openLink('https://t.me/...')">
+            🔔 Telegram Reminder
+          </div>
+
+          <div class="current-box" onclick="openLink('https://calendar.google.com')">
+            📅 Study Schedule
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Motivation -->
+  <div class="motivation">
+    <p class="quote">
+      “Awareness of the world is the first step to success.”
+    </p>
+    <p class="sub">
+      Stay updated. Stay ahead 📚🔥
+    </p>
+  </div>
+
+  <!-- ✅ FIXED JS -->
+  <script src="{{ url_for('static', filename='current.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

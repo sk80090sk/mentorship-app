@@ -1,0 +1,332 @@
+/* ================= ROOT COLORS ================= */
+:root {
+  --bg-main: radial-gradient(circle at top, #1e3f2f, #203a43, #2c5364);
+  --card-bg: #1c1f2b;
+  --input-bg: #2a2e3f;
+  --primary: #00c6ff;
+  --primary-dark: #0072ff;
+  --text-main: white;
+  --text-muted: #aaa;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #facc15;
+}
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-main);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-top: 60px;
+}
+
+/* ================= CARD ================= */
+.card {
+  width: 90%;
+  max-width: 380px;
+  height: 500px;
+
+  background: var(--card-bg);
+  color: var(--text-main);
+
+  padding: 20px;
+  border-radius: 20px;
+
+  box-shadow: 0 0 15px #00c6ff40;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 25px #00c6ff70;
+}
+
+/* ================= TEXT ================= */
+h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px #00c6ff60;
+}
+
+/* ================= INPUT ================= */
+.input-box {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  background: var(--input-bg);
+  color: var(--text-main);
+}
+
+input:focus {
+  box-shadow: 0 0 6px #00c6ff80;
+}
+
+/* ================= BUTTON ================= */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+
+  background: var(--primary);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 0 8px #00c6ff70;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* ================= PROGRESS ================= */
+#progress {
+  margin: 10px 0;
+  padding: 8px;
+
+  text-align: center;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+/* ================= LIST ================= */
+ul {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+  scroll-behavior: smooth;
+}
+
+/* scrollbar */
+ul::-webkit-scrollbar {
+  width: 5px;
+}
+ul::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* ================= TASK ITEM ================= */
+li {
+  background: linear-gradient(135deg, #2a2e3f, #1f2330);
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #00c6ff40;
+}
+
+.completed {
+  background: linear-gradient(135deg, #1a2b1f, #16a34a40);
+}
+
+/* ================= ACTIONS ================= */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.check {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #22c55e;
+}
+
+.edit {
+  background: var(--warning);
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+.delete {
+  background: var(--danger);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+/* ================= MOTIVATION ================= */
+.motivation {
+  margin-top: 15px;
+  text-align: center;
+
+  width: 90%;
+  max-width: 380px;
+
+  padding: 15px;
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 10px #00c6ff30;
+}
+
+.quote {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.sub {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #2a2e3f, #1f2330);
+  padding: 16px 6px;
+  border-radius: 12px;
+
+  text-align: center;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ================= TIMER ================= */
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mainTime {
+  font-size: 70px;
+  color: var(--primary);
+}
+
+#seconds {
+  font-size: 36px;
+}
+
+/* ================= CURRENT AFFAIRS ================= */
+.current-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.current-box {
+  background: linear-gradient(135deg, #2a2e3f, #1f2330);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+/* ================= TAB ================= */
+.tab-bar {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+  background: #2a2e3f;
+}
+
+.tab.active {
+  background: var(--primary);
+  color: black;
+}
+
+/* ================= NAVBAR ================= */
+.menu-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+/* ================= LOGIN ================= */
+#loginForm,
+#signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>UPSC Mentorship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ FIXED CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- MENU BUTTON -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <!-- SIDE MENU -->
+  <div class="side-menu" id="sideMenu">
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+    <!-- ✅ FIXED LINKS -->
+    <div onclick="go('/dashboard')">🏠 Dashboard</div>
+    <div onclick="go('/task')">📋 Task</div>
+    <div onclick="go('/timer')">⏱️ Timer</div>
+    <div onclick="go('/current')">📰 Current</div>
+    <div onclick="go('/ai')">🤖 AI</div>
+    <div onclick="go('/mentorship')">🎓 Mentorship</div>
+    <div onclick="go('/about')">ℹ️ About</div>
+  </div>
+
+  <!-- MAIN CARD -->
+  <div class="card">
+
+    <h2>UPSC Mentorship 🚀</h2>
+
+    <div class="content">
+
+      <!-- INTRO -->
+      <div class="current-box">
+        Start your structured UPSC preparation journey with a day-wise guided plan.
+      </div>
+
+      <!-- PLAN INFO -->
+      <div class="current-box">
+        📅 Duration: 90 Days <br>
+        ⏱ Daily Target: 5 Hours <br>
+        📚 Subjects: Polity, History, Geography, Economy, Environment & More
+      </div>
+
+      <!-- START BUTTON -->
+      <button onclick="startMentorship()">
+        ▶ Start Your Journey
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- MOTIVATION -->
+  <div class="motivation">
+    <p class="quote">
+      “Success in UPSC is built on daily discipline.”
+    </p>
+    <p class="sub">
+      Day by day. Step by step. You will reach there 🚀
+    </p>
+  </div>
+
+  <!-- ✅ FIXED JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

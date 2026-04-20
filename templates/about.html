@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ FIXED CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- MENU ICON -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+        <!-- ✅ FIXED LINKS -->
+        <div onclick="go('/dashboard')">🏠 Dashboard</div>
+        <div onclick="go('/task')">📋 Task</div>
+        <div onclick="go('/timer')">⏱️ Timer</div>
+        <div onclick="go('/mentorship')">🎓 Mentorship</div>
+        <div onclick="go('/current')">📰 Current</div>
+        <div onclick="go('/ai')">🤖 AI</div>
+        <div onclick="go('/about')">ℹ️ About</div>
+    </div>
+
+    <!-- MAIN CARD -->
+    <div class="card">
+        <h2>About This Project</h2>
+
+        <div class="content">
+
+            <!-- APP -->
+            <div class="current-box">
+                <b>🚀 About This Application</b><br><br>
+                This application is designed as a smart study ecosystem for aspirants preparing for competitive exams
+                like UPSC and PCS.
+                It integrates task management, focus timer, current affairs tracking, and AI tools into one platform.
+                The aim is to provide a disciplined and structured study environment where users can stay consistent,
+                track progress, and continuously improve.
+            </div>
+
+            <!-- VISION -->
+            <div class="current-box">
+                <b>🌟 Vision</b><br><br>
+                The vision behind this project is to create a system where preparation is not random, but planned and
+                measurable.
+                A platform where effort is tracked, distractions are minimized, and growth is visible every single day.
+                This is not just an app — it is a step towards building a better version of myself and helping others do
+                the same.
+            </div>
+
+            <!-- GUIDE -->
+            <div class="current-box">
+                <b>🎯 About My Guide</b><br><br>
+                This project has been developed under the valuable guidance of <b>Mr. Akash Gupta</b>.
+                Their support, direction, and insights helped me transform this idea into a structured and meaningful
+                solution.
+                Their mentorship played a crucial role in improving both my thinking approach and development skills.
+            </div>
+
+            <!-- ABOUT ME -->
+            <div class="current-box">
+                <b>👨‍💻 About Me</b><br><br>
+                My name is <b>Saurabh Kumar Verma</b>.
+                I am an aspirant who believes that success is built through discipline, consistency, and smart work.
+                This project represents not just my technical learning, but my personal journey of growth, struggle, and
+                continuous improvement.
+                Every feature in this application reflects a real need that I felt during my preparation.
+            </div>
+
+            <!-- CONTACT -->
+            <div class="current-box">
+                <b>📞 Contact Us</b><br><br>
+
+                If you have any queries, feedback, or suggestions, feel free to reach out.<br><br>
+
+                📱 Phone: <b>7985632119</b><br>
+                📧 Email: <b>saurabhonlineclass@gmail.com</b><br><br>
+
+                Your feedback helps us improve and build a better experience 🚀
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MOTIVATION -->
+    <div class="motivation">
+        <p class="quote">
+            “Discipline is the bridge between goals and achievement.”
+        </p>
+        <p class="sub">
+            Keep showing up. Your future is watching. 🚀
+        </p>
+    </div>
+
+    <!-- ✅ FIXED JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

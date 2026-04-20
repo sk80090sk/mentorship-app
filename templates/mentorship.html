@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mentorship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ FIXED CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- MENU BUTTON -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <!-- SIDE MENU -->
+  <div class="side-menu" id="sideMenu">
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+    <!-- ✅ FIXED LINKS -->
+    <div onclick="go('/dashboard')">🏠 Dashboard</div>
+    <div onclick="go('/task')">📋 Task</div>
+    <div onclick="go('/timer')">⏱️ Timer</div>
+    <div onclick="go('/mentorship')">🎓 Mentorship</div>
+    <div onclick="go('/current')">📰 Current</div>
+    <div onclick="go('/ai')">🤖 AI</div>
+    <div onclick="go('/about')">ℹ️ About</div>
+  </div>
+
+  <!-- MAIN CARD -->
+  <div class="card">
+    <h2>Select Your Exam 🎯</h2>
+
+    <div class="content">
+
+      <!-- ACTIVE -->
+      <div class="current-box" onclick="go('/upsc')">
+        📚 UPSC
+      </div>
+
+      <div class="current-box" onclick="go('/uppcs')">
+        📖 UPPCS
+      </div>
+
+      <!-- WORK IN PROGRESS -->
+      <div class="current-box disabled">
+        🏔️ UKPCS (Work in Progress)
+      </div>
+
+      <div class="current-box disabled">
+        🏛️ BPSC (Work in Progress)
+      </div>
+
+      <div class="current-box disabled">
+        🌄 JPSC (Work in Progress)
+      </div>
+
+      <div class="current-box disabled">
+        ✨ More Exams Coming Soon...
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MOTIVATION -->
+  <div class="motivation">
+    <p class="quote">
+      “A goal without a plan is just a wish.”
+    </p>
+    <p class="sub">
+      Choose your path. Stay consistent. Win your exam 🚀
+    </p>
+  </div>
+
+  <!-- ✅ FIXED JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

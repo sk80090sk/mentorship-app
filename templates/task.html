@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ FIXED CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- MENU ICON -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <!-- SIDE MENU -->
+  <div class="side-menu" id="sideMenu">
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+    <!-- ✅ FIXED LINKS -->
+    <div onclick="go('/dashboard')">🏠 Dashboard</div>
+    <div onclick="go('/task')">📋 Task</div>
+    <div onclick="go('/timer')">⏱️ Timer</div>
+    <div onclick="go('/mentorship')">🎓 Mentorship</div>
+    <div onclick="go('/current')">📰 Current</div>
+    <div onclick="go('/ai')">🤖 AI</div>
+    <div onclick="go('/about')">ℹ️ About</div>
+  </div>
+
+  <div class="card">
+    <h2>Task Planner</h2>
+
+    <div class="input-box">
+      <input id="taskInput" type="text" placeholder="Enter task">
+      <button id="addBtn">Add</button>
+    </div>
+
+    <p id="progress"></p>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <!-- Motivation -->
+  <div class="motivation">
+    <p class="quote">Stay consistent, success will follow.</p>
+    <p class="sub">Small steps today → Big results tomorrow 🚀</p>
+  </div>
+
+  <!-- ✅ FIXED JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="{{ url_for('static', filename='task.js') }}"></script>
+
+</body>
+</html>

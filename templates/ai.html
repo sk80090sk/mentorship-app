@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ FIXED CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- MENU ICON -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+        <!-- ✅ FIXED LINKS -->
+        <div onclick="go('/dashboard')">🏠 Dashboard</div>
+        <div onclick="go('/task')">📋 Task</div>
+        <div onclick="go('/timer')">⏱️ Timer</div>
+        <div onclick="go('/mentorship')">🎓 Mentorship</div>
+        <div onclick="go('/current')">📰 Current</div>
+        <div onclick="go('/ai')">🤖 AI</div>
+        <div onclick="go('/about')">ℹ️ About</div>
+
+    </div>
+
+    <div class="card">
+        <h2>AI Assistant</h2>
+
+        <div class="dashboard">
+
+            <div class="box" onclick="openLink('https://chat.openai.com')">
+                <span>🤖</span>
+                ChatGPT
+            </div>
+
+            <div class="box" onclick="openLink('https://gemini.google.com')">
+                <span>✨</span>
+                Gemini
+            </div>
+
+            <div class="box" onclick="openLink('https://niyam.ai/')">
+                <span>✖️</span>
+                Nyam ai
+            </div>
+
+            <!-- YOUR AI FEATURE -->
+            <div class="box disabled">
+                <span>🧠</span>
+                AI Mentor <br><small>Coming Soon</small>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Motivation -->
+    <div class="motivation">
+        <p class="quote">
+            “Use AI wisely — it can multiply your effort.”
+        </p>
+        <p class="sub">
+            Tools don’t make you successful — how you use them does 🚀
+        </p>
+    </div>
+
+    <!-- ✅ FIXED JS -->
+    <script src="{{ url_for('static', filename='ai.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

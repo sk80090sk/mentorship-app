@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h2 id="formTitle">Welcome Back 👋</h2>
+
+        <div class="content">
+
+            <!-- LOGIN FORM -->
+            <div id="loginForm">
+
+                <div class="input-box">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+
+                <button onclick="login()">Login</button>
+
+
+                
+                <button onclick="guestLogin()">Continue as Guest 👤</button>
+
+                <p class="sub" style="text-align:center; margin-top:10px;">
+                    Don’t have an account?
+                    <span onclick="toggleForm()" style="color:#00c6ff; cursor:pointer;">
+                        Sign Up
+                    </span>
+                </p>
+
+            </div>
+
+            <!-- SIGNUP FORM -->
+            <div id="signupForm" style="display:none;">
+
+                <div class="input-box">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
+
+                <div class="input-box">
+                    <input type="number" id="age" placeholder="Age" required>
+                </div>
+
+                <div class="input-box">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+
+                <div class="input-box">
+                    <input type="email" id="signupEmail" placeholder="Email" required>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                </div>
+
+                <button onclick="signup()">Create Account</button>
+
+                <p class="sub" style="text-align:center; margin-top:10px;">
+                    Already have an account?
+                    <span onclick="toggleForm()" style="color:#00c6ff; cursor:pointer;">
+                        Login
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Motivation -->
+    <div class="motivation">
+        <p class="quote">“Your journey starts with one decision.”</p>
+        <p class="sub">Login and take control of your preparation 🚀</p>
+    </div>
+
+    <!-- JS (VERY IMPORTANT: LAST me hi rahe) -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

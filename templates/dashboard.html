@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ FIXED CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- MENU ICON -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+        <!-- ✅ FIXED LINKS -->
+        <div onclick="go('/dashboard')">🏠 Dashboard</div>
+        <div onclick="go('/task')">📋 Task</div>
+        <div onclick="go('/timer')">⏱️ Timer</div>
+        <div onclick="go('/mentorship')">🎓 Mentorship</div>
+        <div onclick="go('/current')">📰 Current</div>
+        <div onclick="go('/ai')">🤖 AI</div>
+        <div onclick="go('/about')">ℹ️ About</div>
+    </div>
+
+    <div class="card">
+        <h2>Welcome, Aspirant 🎯</h2>
+        <p class="sub" style="text-align:center; margin-bottom:10px;">
+            Stay consistent. Your goal is closer than you think 📚
+        </p>
+
+        <div class="dashboard">
+
+            <!-- ✅ FIXED LINKS -->
+            <div class="box" onclick="go('/task')">
+                <span>📋</span>
+                Task Planner
+            </div>
+
+            <div class="box" onclick="go('/timer')">
+                <span>⏱️</span>
+                Timer
+            </div>
+
+            <div class="box" onclick="go('/mentorship')">
+                <span>🎯</span>
+                Mentorship
+            </div>
+
+            <div class="box" onclick="go('/current')">
+                <span>📰</span>
+                Current Affairs
+            </div>
+
+            <div class="box" onclick="go('/ai')">
+                <span>🤖</span>
+                AI Chatbot
+            </div>
+
+            <!-- COMING SOON -->
+            <div class="box disabled">
+                <span>📊</span>
+                Stats <br><small>Coming Soon</small>
+            </div>
+
+            <div class="box disabled">
+                <span>🧠</span>
+                Revision <br><small>Coming Soon</small>
+            </div>
+
+            <div class="box disabled">
+                <span>📅</span>
+                Calendar <br><small>Coming Soon</small>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="motivation">
+        <p class="quote">
+            “Your future is built by what you do today.”
+        </p>
+        <p class="sub">
+            Stay consistent. Stay focused.
+            Results will follow 🚀
+        </p>
+    </div>
+
+    <!-- ✅ FIXED JS -->
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

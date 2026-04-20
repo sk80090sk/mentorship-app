@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Focus Timer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- MENU ICON -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖</div>
+
+        <!-- ✅ FIXED LINKS -->
+        <div onclick="go('/dashboard')">🏠 Dashboard</div>
+        <div onclick="go('/task')">📋 Task</div>
+        <div onclick="go('/timer')">⏱️ Timer</div>
+        <div onclick="go('/mentorship')">🎓 Mentorship</div>
+        <div onclick="go('/current')">📰 Current</div>
+        <div onclick="go('/ai')">🤖 AI</div>
+        <div onclick="go('/about')">ℹ️ About</div>
+    </div>
+
+  <div class="card timer">
+    <h2>Focus Timer</h2>
+
+    <!-- TABS -->
+    <div class="tab-bar">
+      <div class="tab active" onclick="showSection('timerSection', this)">⏱️ Timer</div>
+      <div class="tab" onclick="showSection('stopwatchSection', this)">⏲️ Stopwatch</div>
+    </div>
+
+    <!-- ================= TIMER ================= -->
+    <div id="timerSection" class="section">
+
+      <div class="time">
+        <div id="mainTime">00 : 25</div>
+        <div id="seconds"></div>
+      </div>
+
+      <div class="input-box">
+        <input type="number" id="minutes" placeholder="Set minutes">
+        <button onclick="setTimer()">Set</button>
+      </div>
+
+      <div class="controls">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+      <p id="status">Click Start Timer⌛</p>
+    </div>
+
+    <!-- ================= STOPWATCH ================= -->
+    <div id="stopwatchSection" class="section" style="display:none;">
+
+      <div class="time">
+        <div id="swTime">00 : 00 : 00</div>
+      </div>
+
+      <div class="controls">
+        <button onclick="startSW()">▶ Start</button>
+        <button onclick="pauseSW()">⏸ Pause</button>
+        <button onclick="resetSW()">🔄 Reset</button>
+      </div>
+
+      <!-- NEW STATUS -->
+      <p id="swStatus">Stopwatch Ready ⏱️</p>
+
+    </div>
+
+    
+
+  </div>
+
+
+  <div class="motivation">
+  <p class="quote">
+    “Focus for a few minutes can change your entire future.”
+  </p>
+  <p class="sub">
+    Every second counts — stay in the zone and finish strong ⏳
+  </p>
+</div>
+
+  <script src="{{ url_for('static', filename='timer.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
