@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="users.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="993"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="upsc_plan" custom_title="0" dock_id="3" table="4,9:mainupsc_plan"/><dock_state state="000000ff00000000fd00000001000000020000043b000002aefc0100000002fc000000000000043b0000000000fffffffa000000000100000002fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500320100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f007700730065003301000000000000043b0000011e00ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="chat" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="29"/><column index="2" value="32"/><column index="3" value="29"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="upsc_plan" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="29"/><column index="2" value="46"/><column index="3" value="117"/><column index="4" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">
+CREATE TABLE upsc_plan (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    day TEXT,
+    subject TEXT,
+    topic TEXT
+);
+
+INSERT INTO upsc_plan (day, subject, topic) VALUES
+
+-- ART &amp; CULTURE
+('Day1','Art &amp; Culture','Indian Architecture, Sculpture and Pottery'),
+('Day2','Art &amp; Culture','Indian Paintings, Indian Handicrafts, UNESCO’S List of Tangible World Heritage Sites in India'),
+('Day3','Art &amp; Culture','Indian Music, Indian Dance Forms, Indian Theatre and Indian Puppetry, UNESCO’S List of Intangible World Heritage Sites in India'),
+('Day4','Art &amp; Culture','Languages in India, Indian Literature, Science and Technology through the Ages'),
+('Day5','Art &amp; Culture','Religions in India, Schools of Philosophy, Bhakti and Sufi Movements'),
+('Day6','Art &amp; Culture','Law &amp; Culture, Cultural Institutions in India, Indian Cinema, Awards and Honours, Martial Arts in India, Coinage, Fairs and Festivals of India, Calendars in India, Indian Culture Abroad, Cultural Places of Interest and Recent Geographical Indications'),
+
+-- ANCIENT &amp; MEDIEVAL HISTORY
+('Day7','History','The Old Stone Age, The Neolithic Age, Chalcolithic Cultures, The Harappan Civilization and The Vedic Age'),
+('Day8','History','Jainism and Buddhism'),
+('Day9','History','The Mahajanapadas, The Magadhan Empires'),
+('Day10','History','Mauryan and Post Mauryan Age, Central Asian Contact and Mutual Impact'),
+('Day11','History','The Satvahana Phase, The Dawn of History in the Deep South'),
+('Day12','History','Gupta and Post Gupta Age (Harsha, Pallavas, Chalukyas)'),
+('Day13','History','Age of Three Empires (Palas, Pratiharas and Rashtrakutas)'),
+('Day14','History','The Chola Empire and The Age of Conflict (Ghaznavids, Rajput and Turkish)'),
+('Day15','History','The Vijayanagara Empire, The Bahmani Kingdom, The Coming of the Portuguese'),
+('Day16','History','Delhi Sultanate, The Mughal Empire and Afghans'),
+('Day17','History','Cultural Development in Medieval India, Bhakti &amp; Sufi Movement'),
+('Day18','History','Maratha State and Confederacy, Decline of Mughals'),
+
+-- MODERN HISTORY
+('Day19','Modern History','Advent of the Europeans in India and India on the Eve of British Conquest'),
+('Day20','Modern History','Expansion and Consolidation of British Power in India'),
+('Day21','Modern History','People’s Resistance Against British Before 1857, The Revolt of 1857'),
+('Day22','Modern History','Socio-Religious Reform Movements: General Features and Socio-Cultural Reform Movements and their Leaders'),
+('Day23','Modern History','Beginning of Modern Nationalism in India, Indian National Congress, Era of Militant Nationalism'),
+('Day24','Modern History','First Phase of Revolutionary Activities, First World War and Nationalist Response'),
+('Day25','Modern History','Emergence of Gandhi, Non-Cooperation Movement and Khilafat Movement, Emergence of Swarajists, Socialist Ideas, Revolutionary Activities and Other New Forces'),
+('Day26','Modern History','Simon Commission and Nehru Report, Civil Disobedience Movement and Round Table Conferences, Debates on Future Strategy, Congress Rule in Provinces'),
+('Day27','Modern History','Nationalist Response in the Wake of World War II, Quit India Movement, Demand for Pakistan, INA, Post War Scenario, Independence with Partition'),
+('Day28','Modern History','Interim Government, Independence and Partition, Integration of States'),
+('Day29','Modern History','Constitutional Development between 1773-1935, Evolution of Civil Services, Police System, Military, Indian Press and Judiciary'),
+('Day30','Modern History','Development of Administrative, Revenue, Economic, Social-Cultural, Educational and Foreign Policy under British Rule, Working Class and Peasant Movements, Evolution of Nationalist Foreign Policy'),
+
+-- GEOGRAPHY
+('Day31','Geography','Geography as a Discipline, Origin and Evolution of Earth and Interior, Distribution of Oceans and Continents, Minerals and Rocks'),
+('Day32','Geography','Geomorphic Processes, Landforms and their Evolution'),
+('Day33','Geography','Composition and Structure of Atmosphere, Solar Radiation, Heat Balance and Temperature'),
+('Day34','Geography','Atmospheric Circulation and Weather Systems, Water in the Atmosphere'),
+('Day35','Geography','World Climate and Climate Change'),
+('Day36','Geography','Water (Oceans), Movements of Ocean Water, Life on Earth, Biodiversity and Conservation, National Parks'),
+('Day37','Geography','India Location, Physiography and Structure'),
+('Day38','Geography','Drainage System and Important River Basins'),
+('Day39','Geography','Climate Classification (India)'),
+('Day40','Geography','Natural Vegetation and Soils'),
+('Day41','Geography','Natural Hazards and Disasters'),
+('Day42','Geography','World Population, Distribution, Density, Growth, Composition, Human Development'),
+('Day43','Geography','Primary, Secondary, Tertiary and Quaternary Activities'),
+('Day44','Geography','Transport, Communication, International Trade, Human Settlements'),
+('Day45','Geography','Population Distribution, Density, Growth and Composition'),
+('Day46','Geography','Land Resources, Agriculture, Water Resources, Agriculture Typology'),
+('Day47','Geography','Crops in India, Agro-Climatic Regions, Animal Husbandry, Fisheries, Aquaculture'),
+('Day48','Geography','Mineral and Energy Resources, Manufacturing Industries'),
+
+-- POLITY
+('Day49','Polity','Indian Constitution: Background, Features and Preamble'),
+('Day50','Polity','Union and its Territory and Citizenship'),
+('Day51','Polity','Fundamental Rights'),
+('Day52','Polity','Fundamental Rights (continued)'),
+('Day53','Polity','Directive Principles, Fundamental Duties, Constitutional Amendments'),
+('Day54','Polity','Basic Structure, Parliamentary System, Federal System'),
+('Day55','Polity','Centre-State Relations, Inter-State Relations, Emergency Provisions'),
+('Day56','Polity','President, Vice-President, Prime Minister, Council of Ministers, Cabinet Committees'),
+('Day57','Polity','Parliament'),
+('Day58','Polity','Parliament (continued)'),
+('Day59','Polity','Parliamentary Committees, Forums and Groups'),
+('Day60','Polity','Governor, Chief Minister, State Council of Ministers'),
+('Day61','Polity','State Legislature, Special Provisions for States'),
+('Day62','Polity','Supreme Court and High Court'),
+('Day63','Polity','Tribunals and Subordinate Courts'),
+('Day64','Polity','Judicial Review, Judicial Activism, Public Interest Litigation'),
+('Day65','Polity','Panchayati Raj and Municipalities'),
+('Day66','Polity','Constitutional Bodies (EC, UPSC, SPSC, Finance Commission, GST Council, etc.)'),
+('Day67','Polity','Constitutional Posts (CAG, Attorney General, etc.)'),
+('Day68','Polity','Non-Constitutional Bodies (NITI Aayog, NHRC, CBI, Lokpal, etc.)'),
+('Day69','Polity','Other Constitutional Dimensions (Cooperative Societies, Official Language, etc.)'),
+('Day70','Polity','Political Dynamics (Political Parties, Elections, RPA, Anti-Defection Law, Pressure Groups)'),
+
+-- GOVERNANCE
+('Day71','Governance','Government Policies, Welfare Schemes, Mechanisms, Laws, Institutions'),
+('Day72','Governance','Social Sector Issues: Health, Education, Poverty, Human Resources'),
+
+-- IR
+('Day73','IR','India and its Neighborhood, Global Groupings, International Relations, Indian Diaspora'),
+('Day74','IR','International Institutions, Agencies and Fora'),
+
+-- ECONOMY
+('Day75','Economy','Macroeconomics Basics: GDP, GNP, NNP, Growth, Development'),
+('Day76','Economy','Planning, NITI Aayog, Poverty, Unemployment'),
+('Day77','Economy','Public Finance, Budget, Fiscal Policy, Taxation'),
+('Day78','Economy','Money and Capital Market'),
+('Day79','Economy','Banking, RBI, Monetary Policy, Banking Reforms'),
+('Day80','Economy','Inflation, Business Cycle, External Sector'),
+('Day81','Economy','Economic Reforms, Inclusive Growth'),
+('Day82','Economy','International Economic Organizations, IPR'),
+('Day83','Economy','Agriculture, Subsidies, Food Security, Land Reforms'),
+('Day84','Economy','Industrial Sector, Infrastructure, Energy'),
+
+-- ENVIRONMENT
+('Day85','Environment','Ecology, Ecosystem, Types'),
+('Day86','Environment','Pollution, EIA, Renewable Energy'),
+('Day87','Environment','Biodiversity, Marine Life, Biotechnology'),
+('Day88','Environment','Protected Areas, Conservation Efforts'),
+('Day89','Environment','Climate Change, Ozone Depletion, Policies'),
+('Day90','Environment','Environmental Institutions, Conventions'),
+
+-- SCIENCE
+('Day91','Science','Biology, Biotechnology, Gene Editing, Food Chemicals'),
+('Day92','Science','Physics, Chemistry, IT, AI, Nanotechnology'),
+('Day93','Science','Space Technology, Defence, Nuclear Programme'),
+('Day94','Science','Energy Sources, Renewable Energy'),
+
+-- SECURITY
+('Day95','Security','Extremism, Role of State/Non-State Actors, Media, Security Forces'),
+('Day96','Security','Cyber Security, Border Issues, Organized Crime, Money Laundering');</sql><current_tab id="0"/></tab_sql></sqlb_project>

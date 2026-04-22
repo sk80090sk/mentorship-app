@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h2>Login</h2>
+        <div>
+            <input id="login" class="w-100" placeholder="Email or Phone"><br> <br>
+            <input id="password" class="w-100" type="password" placeholder="Password"><br> <br>
+        </div>
+
+        <button onclick="login()">Login</button>
+
+        <p id="msg"></p>
+        <br>
+        <button onclick="forgot()">Forgot Password</button>
+        <br>
+
+
+        <p>Don't have an account? <a href="/register">Register now</a></p>
+
+        <br>
+
+
+    </div>
+
+    <!-- Motivation -->
+    <div class="motivation">
+        <p class="quote">“Your journey starts with one decision.”</p>
+        <p class="sub">Login and take control of your preparation 🚀</p>
+    </div>
+
+    <!-- JS (VERY IMPORTANT: LAST me hi rahe) -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

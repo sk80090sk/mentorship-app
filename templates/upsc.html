@@ -11,8 +11,13 @@
 
 <body>
 
-  <!-- MENU BUTTON -->
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <!-- MENU ICON (LEFT TOP) -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- LOGOUT ICON (RIGHT TOP) -->
+    <div class="logout-btn" onclick="go('/logout')">➜]</div>
+
+    
 
   <!-- SIDE MENU -->
   <div class="side-menu" id="sideMenu">
@@ -20,12 +25,13 @@
 
     <!-- ✅ FIXED LINKS -->
     <div onclick="go('/dashboard')">🏠 Dashboard</div>
-    <div onclick="go('/task')">📋 Task</div>
-    <div onclick="go('/timer')">⏱️ Timer</div>
-    <div onclick="go('/current')">📰 Current</div>
-    <div onclick="go('/ai')">🤖 AI</div>
-    <div onclick="go('/mentorship')">🎓 Mentorship</div>
-    <div onclick="go('/about')">ℹ️ About</div>
+        <div onclick="go('/mentorship')">🎓 Mentorship</div>
+        <div onclick="go('/task')">📋 Task</div>
+        <div onclick="go('/timer')">⏱️ Timer</div>
+        <div onclick="go('/current')">📰 Current</div>
+        <div onclick="go('/ai')">🤖 AI</div>
+        <div onclick="go('/about')">ℹ️ About</div>
+        <div onclick="go('/logout')">🚪 Logout</div>
   </div>
 
   <!-- MAIN CARD -->

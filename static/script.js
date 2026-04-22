@@ -1,4 +1,4 @@
-//manu bar
+// ---------------- MENU ---------------- //
 
 function toggleMenu() {
   const menu = document.getElementById("sideMenu");
@@ -6,7 +6,6 @@ function toggleMenu() {
 
   menu.classList.toggle("active");
 
-  // hide/show button
   if (menu.classList.contains("active")) {
     btn.style.display = "none";
   } else {
@@ -19,155 +18,131 @@ function go(page) {
 }
 
 
+// ---------------- REGISTER ---------------- //
 
+async function register() {
 
+    let data = {
+        name: document.getElementById("name").value.trim(),
+        gender: document.getElementById("gender").value.trim(),
+        age: document.getElementById("age").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        password: document.getElementById("password").value
+    };
 
+    let confirm = document.getElementById("confirm").value;
 
+    // ✅ validation
+    if (!data.name || !data.email || !data.password) {
+        document.getElementById("msg").innerText = "All fields required!";
+        return;
+    }
 
+    if (data.password !== confirm) {
+        document.getElementById("msg").innerText = "Password not match!";
+        return;
+    }
 
+    try {
+        let res = await fetch('/register_user', {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        });
 
-// ===== TOGGLE LOGIN / SIGNUP =====
-function toggleForm() {
-  const login = document.getElementById("loginForm");
-  const signup = document.getElementById("signupForm");
-  const title = document.getElementById("formTitle");
+        let result = await res.json();
 
-  if (login.style.display === "none") {
-    login.style.display = "block";
-    signup.style.display = "none";
-    title.innerText = "Welcome Back 👋";
-  } else {
-    login.style.display = "none";
-    signup.style.display = "block";
-    title.innerText = "Create Account 🚀";
-  }
-}
+        if (result.status === "exists") {
+            document.getElementById("msg").innerText = "User already registered";
+        } 
+        else if (result.status === "success") {
+            document.getElementById("msg").innerText = "Registration successful ✅";
 
-
-// ===== DOM READY =====
-document.addEventListener("DOMContentLoaded", function () {
-
-  const fields = [
-    document.getElementById("name"),
-    document.getElementById("age"),
-    document.getElementById("phone"),
-    document.getElementById("signupEmail"),
-    document.getElementById("signupPassword")
-  ];
-
-  fields.forEach((field, index) => {
-    if (!field) return;
-
-    field.addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
-        e.preventDefault(); // 🔥 MOST IMPORTANT
-
-        if (index < fields.length - 1) {
-          fields[index + 1].focus();
-        } else {
-          signup();
+            setTimeout(() => {
+                window.location.href = "/";
+            }, 1000);
+        } 
+        else {
+            document.getElementById("msg").innerText = "Something went wrong!";
         }
-      }
-    });
-  });
 
-});
-
-// ===== LOGIN =====
-function login() {
-  let email = document.getElementById("loginEmail").value.trim();
-  let password = document.getElementById("loginPassword").value.trim();
-
-  if (!email || !password) {
-    alert("Please fill all fields");
-    return;
-  }
-
-  fetch("/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ email, password })
-  })
-  .then(res => res.json())
-  .then(res => {
-    if (res.status === "success") {
-      window.location.href = "/dashboard";
-    } else {
-      alert(res.message);
+    } catch (error) {
+        console.log(error);
+        document.getElementById("msg").innerText = "Server error!";
     }
-  });
 }
 
 
-// ===== SIGNUP =====
-function signup() {
-  let name = document.getElementById("name").value.trim();
-  let age = document.getElementById("age").value.trim();
-  let phone = document.getElementById("phone").value.trim();
-  let email = document.getElementById("signupEmail").value.trim();
-  let password = document.getElementById("signupPassword").value.trim();
+// ---------------- LOGIN ---------------- //
 
-  if (name.length < 3) return alert("Invalid Name");
-  if (age < 15 || age > 60) return alert("Invalid Age");
-  if (!/^[0-9]{10}$/.test(phone)) return alert("Invalid Phone");
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return alert("Invalid Email");
-  if (password.length < 6) return alert("Weak Password");
+async function login() {
 
-  fetch("/signup", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ name, age, phone, email, password })
-  })
-  .then(res => res.json())
-  .then(res => {
-    if (res.status === "success") {
-      alert("Signup successful 🚀");
-      toggleForm();
-    } else {
-      alert(res.message);
+    let data = {
+        login: document.getElementById("login").value.trim(),
+        password: document.getElementById("password").value
+    };
+
+    if (!data.login || !data.password) {
+        document.getElementById("msg").innerText = "Enter login & password!";
+        return;
     }
-  });
+
+    try {
+        let res = await fetch('/login_user', {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        });
+
+        let result = await res.json();
+
+        if (result.status === "success") {
+            window.location.href = "/dashboard";
+        } 
+        else if (result.status === "wrong") {
+            document.getElementById("msg").innerText = "Invalid credentials";
+        } 
+        else {
+            document.getElementById("msg").innerText = "User not exist";
+        }
+
+    } catch (error) {
+        console.log(error);
+        document.getElementById("msg").innerText = "Server error!";
+    }
 }
 
 
-// ===== GUEST LOGIN =====
-function guestLogin() {
-  localStorage.setItem("userType", "guest");
-  window.location.href = "/dashboard";
+// ---------------- FORGOT ---------------- //
+
+async function forgot() {
+
+    let login = prompt("Enter email or phone");
+    let new_password = prompt("Enter new password");
+
+    if (!login || !new_password) {
+        alert("All fields required!");
+        return;
+    }
+
+    try {
+        let res = await fetch('/forgot', {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({login, new_password})
+        });
+
+        let result = await res.json();
+
+        if (result.status === "updated") {
+            alert("Password updated successfully ✅");
+        } else {
+            alert("Error updating password");
+        }
+
+    } catch (error) {
+        console.log(error);
+        alert("Server error!");
+    }
 }
-
-// enter new feid
-fields.forEach((field, index) => {
-  if (!field) return;
-
-  // live validation (color only)
-  field.addEventListener("input", function () {
-    if (validate(field)) {
-      field.style.border = "2px solid green";
-    } else {
-      field.style.border = "2px solid red";
-    }
-  });
-
-  // ENTER → ALWAYS NEXT (no block)
-  field.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-
-      if (index < fields.length - 1) {
-        fields[index + 1].focus();
-      } else {
-        signup(); // last field
-      }
-    }
-  });
-});
-
-
-
-
-

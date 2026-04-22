@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h2>Create Account</h2>
+
+        <input id="name" placeholder="Full Name"><br>
+        <input id="gender" placeholder="Gender"><br>
+        <input id="age" type="number" placeholder="Age"><br>
+        <input id="phone" placeholder="Phone"><br>
+        <input id="email" type="email" placeholder="Email"><br>
+        <input id="password" type="password" placeholder="Password"><br>
+        <input id="confirm" type="password" placeholder="Confirm Password"><br>
+
+        <button onclick="register()">Register</button>
+
+        <p id="msg"></p>
+
+        <p>
+            Already have an account?
+            <a href="/">Login here</a>
+        </p>
+
+    </div>
+
+    <div class="motivation">
+        <p class="quote">“Your future is created by what you do today.”</p>
+        <p class="sub">Take the first step — register now 🚀</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

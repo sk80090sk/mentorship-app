@@ -6,63 +6,108 @@
   <title>Mentorship</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ✅ FIXED CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-  <!-- MENU BUTTON -->
+  <!-- MENU ICON -->
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <!-- LOGOUT -->
+  <div class="logout-btn" onclick="go('/logout')">➜]</div>
+
 
   <!-- SIDE MENU -->
   <div class="side-menu" id="sideMenu">
     <div class="close-btn" onclick="toggleMenu()">✖</div>
 
-    <!-- ✅ FIXED LINKS -->
     <div onclick="go('/dashboard')">🏠 Dashboard</div>
+    <div onclick="go('/mentorship')">🎓 Mentorship</div>
     <div onclick="go('/task')">📋 Task</div>
     <div onclick="go('/timer')">⏱️ Timer</div>
-    <div onclick="go('/mentorship')">🎓 Mentorship</div>
     <div onclick="go('/current')">📰 Current</div>
     <div onclick="go('/ai')">🤖 AI</div>
     <div onclick="go('/about')">ℹ️ About</div>
+    <div onclick="go('/logout')">🚪 Logout</div>
   </div>
+
 
   <!-- MAIN CARD -->
   <div class="card">
-    <h2>Select Your Exam 🎯</h2>
 
-    <div class="content">
+    <h2>Mentorship Panel 🎯</h2>
 
-      <!-- ACTIVE -->
-      <div class="current-box" onclick="go('/upsc')">
-        📚 UPSC
-      </div>
+    {% if data == None %}
+    <!-- 🔹 FORM -->
+    <div id="mentorship-form">
 
-      <div class="current-box" onclick="go('/uppcs')">
-        📖 UPPCS
-      </div>
+      <h3>New Mentorship Registration</h3>
 
-      <!-- WORK IN PROGRESS -->
-      <div class="current-box disabled">
-        🏔️ UKPCS (Work in Progress)
-      </div>
+      <form action="/save_preferences" method="POST">
 
-      <div class="current-box disabled">
-        🏛️ BPSC (Work in Progress)
-      </div>
+        <label>Which Exam are you preparing for?</label><br>
+        <select name="exam" required>
+          <option value="">--Select Exam--</option>
+          <option value="UPSC">UPSC</option>
+          <option value="UPPCS">UPPCS</option>
+          <option value="SSC">SSC</option>
+          <option value="Banking">Banking</option>
+        </select>
+        <br><br>
 
-      <div class="current-box disabled">
-        🌄 JPSC (Work in Progress)
-      </div>
+        <label>Daily Study Hours:</label><br>
+        <input type="number" name="study_hours" min="1" max="16" required>
+        <br><br>
 
-      <div class="current-box disabled">
-        ✨ More Exams Coming Soon...
-      </div>
+        <!-- ⚠️ IMPORTANT FIX -->
+        <!-- Email remove कर दो अगर session use कर रहे हो -->
+        <!-- नहीं तो user duplicate create करेगा -->
+        <label>Email:</label><br>
+        <input type="email" name="email" required>
+        <br><br>
+
+        <label>Notification Time:</label><br>
+        <input type="time" name="notify_time" required>
+        <br><br>
+
+        <button type="submit">Start Mentorship</button>
+
+      </form>
 
     </div>
+
+    {% else %}
+    <!-- 🔹 DASHBOARD -->
+    <div id="mentorship-dashboard">
+
+      <!-- Dynamic title -->
+      <h3>📊 {{ data[2] }} Membership</h3>
+
+      <p><b>Exam:</b> {{ data[2] }}</p>
+      <p><b>Study Hours:</b> {{ data[3] }} hrs/day</p>
+      <p><b>Email:</b> {{ data[1] }}</p>
+      <p><b>Notification Time:</b> {{ data[4] }}</p>
+      <br>
+
+      <!-- DELETE -->
+      <form action="/delete_mentorship" method="POST">
+        <button type="submit" class="danger-btn">❌ Delete Membership</button>
+      </form>
+
+      <br>
+
+      <!-- RESET -->
+      <form action="/reset_mentorship" method="POST">
+        <button type="submit" class="secondary-btn">🔄 New Registration</button>
+      </form>
+
+    </div>
+    {% endif %}
+
   </div>
+
 
   <!-- MOTIVATION -->
   <div class="motivation">
@@ -74,7 +119,8 @@
     </p>
   </div>
 
-  <!-- ✅ FIXED JS -->
+
+  <!-- JS -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>

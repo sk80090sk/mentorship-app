@@ -11,8 +11,13 @@
 
 <body>
 
-    <!-- MENU ICON -->
+    <!-- MENU ICON (LEFT TOP) -->
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- LOGOUT ICON (RIGHT TOP) -->
+    <div class="logout-btn" onclick="go('/logout')">➜]</div>
+
+
 
     <!-- SIDE MENU -->
     <div class="side-menu" id="sideMenu">
@@ -20,18 +25,21 @@
 
         <!-- ✅ FIXED LINKS -->
         <div onclick="go('/dashboard')">🏠 Dashboard</div>
+        <div onclick="go('/mentorship')">🎓 Mentorship</div>
         <div onclick="go('/task')">📋 Task</div>
         <div onclick="go('/timer')">⏱️ Timer</div>
-        <div onclick="go('/mentorship')">🎓 Mentorship</div>
         <div onclick="go('/current')">📰 Current</div>
         <div onclick="go('/ai')">🤖 AI</div>
         <div onclick="go('/about')">ℹ️ About</div>
+        <div onclick="go('/logout')">🚪 Logout</div>
+
+
     </div>
 
     <div class="card">
-        <h2>Welcome, Aspirant 🎯</h2>
+        <h2>Welcome,{{user}}🎉</h2>
         <p class="sub" style="text-align:center; margin-bottom:10px;">
-            Stay consistent. Your goal is closer than you think 📚
+            Your goal is closer than you think 📚
         </p>
 
         <div class="dashboard">
@@ -66,6 +74,7 @@
             <div class="box disabled">
                 <span>📊</span>
                 Stats <br><small>Coming Soon</small>
+
             </div>
 
             <div class="box disabled">

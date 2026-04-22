@@ -665,6 +665,17 @@ li:hover {
   z-index: 2100;
 }
 
+/* LOGOUT RIGHT TOP */
+.logout-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2100;
+  color: var(--primary);
+}
+
 /* SIDE MENU */
 .side-menu {
   position: fixed;
@@ -749,32 +760,16 @@ li:hover {
 
 /*mentorship page*/
 
-
-
-
-
-
-
-/*login form */
-/* LOGIN / SIGNUP FIX ONLY */
-#loginForm,
-#signupForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.mentorship-setup{
+  justify-content: center;
+  display: flex
+  ;
 }
 
-/* input spacing */
-#loginForm .input-box,
-#signupForm .input-box {
-  width: 100%;
-    margin: 10px auto;
 
-}
 
-/* button spacing */
-#loginForm button,
-#signupForm button {
-  width: 60%;
-  margin-top: 10px;
+
+/* utility classes*/
+.w-100
+{width: 100%;
 }

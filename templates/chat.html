@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>AI Assistant</title>
+    <title>AI Mentor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ✅ FIXED CSS -->
@@ -37,40 +37,22 @@
     </div>
 
     <div class="card">
-        <h2>AI Assistant</h2>
+        <h2>UPSC Mentor Chat</h2>
 
-        <div class="dashboard">
-
-
-            <div class="box" onclick="go('/chat')">
-                <span>🤖</span>
-                Our AI Mentor<br>
-                paid Feature
-            </div>
-
-
-            <div class="box" onclick="openLink('https://chat.openai.com')">
-                <span>👀</span>
-                ChatGPT<br>
-                free
-            </div>
-
-            <div class="box" onclick="openLink('https://gemini.google.com')">
-                <span>✨</span>
-                Gemini<br>
-                free
-            </div>
-
-            <div class="box" onclick="openLink('https://niyam.ai/')">
-                <span>✖️</span>
-                Nyam ai<br>
-                free
-            </div>
-
-            
-            
-
+        <!-- Chat Container -->
+        <div id="chatContainer" style="height:400px; overflow-y:auto; border:1px solid #6bc0c393; padding:10px;">
+            <p><b>AI Mentor:</b> Hello! Ask me anything about Your preparation.</p>
         </div>
+
+        <br>
+
+        <!-- Input Area -->
+        <input class="w-100" type="text" id="userInput" placeholder="Type your question..." />
+        <br>
+        <button onclick="sendMessage()">Send</button>
+
+
+    </div>
     </div>
 
     <!-- Motivation -->
